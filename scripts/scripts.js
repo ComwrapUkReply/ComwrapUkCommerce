@@ -11,6 +11,10 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  toClassName,
+  getMetadata,
+  loadScript,
+  toCamelCase,
 } from './aem.js';
 
 const LCP_BLOCKS = [
@@ -75,14 +79,6 @@ function buildHeroBlock(main) {
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {
-  // Add below snippet early in the eager phase
-  if (getMetadata('experiment')
-    || Object.keys(getAllMetadata('campaign')).length
-    || Object.keys(getAllMetadata('audience')).length) {
-    // eslint-disable-next-line import/no-relative-packages
-    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
-    await runEager(document, { audiences: AUDIENCES }, pluginContext);
-  }
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
@@ -123,6 +119,14 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
+  // Add below snippet early in the eager phase
+  if (getMetadata('experiment')
+    || Object.keys(getAllMetadata('campaign')).length
+    || Object.keys(getAllMetadata('audience')).length) {
+    // eslint-disable-next-line import/no-relative-packages
+    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
+    await runEager(document, { audiences: AUDIENCES }, pluginContext);
+  }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
 
@@ -177,7 +181,6 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadBlocks(main);
-
   // Add below snippet at the end of the lazy phase
   if ((getMetadata('experiment')
     || Object.keys(getAllMetadata('campaign')).length
