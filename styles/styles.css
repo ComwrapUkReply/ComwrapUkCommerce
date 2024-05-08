@@ -11,6 +11,103 @@
  */
 
 :root {
+
+    /* Alaska font */
+    --font-family-extralight: 'Alaska-ExtraLight', sans-serif;
+    --font-family-extralightitalic: 'Alaska-ExtraLightItalic', sans-serif;
+    --font-family-light: 'Alaska-Light', sans-serif;
+    --font-family-lightitalic: 'Alaska-LightItalic', sans-serif;
+    --font-family-regular: 'Alaska-Regular', sans-serif;
+    --font-family-regularitalic: 'Alaska-RegularItalic', sans-serif;
+    --font-family-semibold: 'Alaska-SemiBold', sans-serif;
+    --font-family-semibolditalic: 'Alaska-SemiBoldItalic', sans-serif;
+    --font-family-bold: 'Alaska-Bold', sans-serif;
+    --font-family-bolditalic: 'Alaska-BoldItalic', sans-serif;
+    --code-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
+      monospace;
+      --code-bold-font-family: 'Roboto Mono Bold', menlo, consolas, 'Liberation Mono',
+      monospace;
+
+  /* Font family definition  */
+  --body-font-family: var(--font-family-light), arial, sans-serif;  /* Body */
+  --body-font-family-italic:   var(--font-family-lightitalic), arial, sans-serif; /* Body italic */
+  --bold-font-family: var(--font-family-bold), arial, sans-serif;   /* Heading 1 2 5 */
+  --bold-font-family-italic: var( --font-family-bolditalic), arial, sans-serif;   /* Heading 1 2 5 italic */
+  --semibold-font-family: var(--font-family-regular), arial, sans-serif; /* Heading 4  */
+  --semibold-font-family-italic: var(--font-family-regularitalic), arial, sans-serif; /* Heading 4 italic */
+  --extralight-font-family: var(--font-family-extralight), arial, sans-serif; /* Heading 3 */
+  --extralight-font-family-italic: var(--font-family-extralightitalic), arial, sans-serif; /* Heading 3 italic */
+  
+  /* Default font set up */
+  font-size: 17px;
+  line-height: 27px;
+
+
+   /* Font family for Mobile  */
+   --body-font-size: 1rem; /* 18px */
+   --body-font-height: 1.6875rem /* 27px */
+ 
+   /* Font family for Desktop  */;
+   --body-font-size-l: 1.125rem; /* 18px */
+   --body-font-height-l: 1.875rem; /* 30px */
+   --body-font-size-m: 0.889rem; /* 16px */
+ 
+   /* Small size */
+   --body-font-size-s: 0.875rem; /* 14px */
+   --body-font-size-xs: 0.667rem; /* 12px */ 
+   --body-font-height-s: 1; 
+ 
+   /* Body font size */
+   --font-size: clamp(var(--body-font-size), 2.3vw, var(--body-font-size));
+   --line-height: clamp(
+     var(--body-font-height),
+     2.3vw,
+     var(--body-font-height-l)
+   );
+
+     /* Spacing */
+  --spacing-xxxs: 0.25rem; /* 4px */
+  --spacing-xxs: 0.5rem; /* 8px */
+  --spacing-xsm: 0.75rem; /* 12px */
+  --spacing-xs: 1rem; /* 16px */
+  --spacing-s: 1.5rem; /* 24px */
+  --spacing-m: 2rem; /* 32px */
+  --spacing-ml: 2.5rem; /* 40px */
+  --spacing-l: 3rem; /* 48px */
+  --spacing-xl: 3.5rem; /* 56px */
+  --spacing-xxl: 4rem; /* 64px */
+  --spacing-xxxl: 5rem; /* 80px */
+  --spacing-4xl: 6rem; /* 96px */
+  --spacing-5xl: 6.5rem; /* 104px */
+  --spacing-6xl: 8.889rem; /* 160px */
+
+   /* Page */
+   --page-max-width: 1440px;
+   --page-max-content: 1200px;
+ 
+   /* Color */
+   --color-white: #fff;
+   --color-black: #000;
+   --color-heart-red: #f91351;
+   --color-heart-red-dark: #E02746;
+   --color-light-blue: #00aded;
+   --color-dark-blue: #0067b3;
+   --color-nocturnal-blue: #212a35;
+   --color-space-gray: #eff1f4;
+   --color-surgical-white: #fff;
+   --color-pitch-black: #161616;
+   --color-wild-seal: #4d555d;
+   --color-rocky-road: #7a7f86;
+   --color-cloudy-sky: #e0e4ea;
+   --color-western-snow: #f7f9fc;
+
+     /* Background colors */
+  --color-foreground: var(--color-white);
+  --color-background: var(--color-nocturnal-blue);
+
+  /* Links Color */
+  --color-link: var(--color-heart-red);
+
   /* Elsie base design */
   --color-brand-300: #6d6d6d;
   --color-brand-500: #454545;
@@ -141,13 +238,14 @@ html {
 }
 
 body {
-  font: var(--type-body-1-default-font);
-  letter-spacing: var(--type-body-1-default-letter-spacing);
+  font-family:var(--body-font-family);
   margin: 0;
-  line-height: 1.6;
-  color: var(--color-brand-700);
-  background-color: var(--background-color);
+  padding: 0;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   display: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
 }
 
 body.appear {
@@ -232,8 +330,8 @@ main pre {
 
 /* links */
 a:any-link {
-  color: var(--color-brand-500);
-  font: var(--type-body-1-strong-font);
+  color: var(--color-white);
+  font-family: var(--body-font-family);
   letter-spacing: var(--type-body-1-strong-letter-spacing);
   text-decoration: none;
 }
@@ -241,7 +339,7 @@ a:any-link {
 a:hover {
   text-decoration: solid underline var(--color-brand-700);
   text-underline-offset: 6px;
-  color: var(--color-brand-700);
+  color: var(--color-heart-red);
 }
 
 a:focus-visible {
@@ -261,7 +359,7 @@ a > u, button > u {
 /* buttons */
 a.button:any-link,
 button {
-  font: var(--type-button-2-font);
+  font-family: var(--body-font-family);
   letter-spacing: var(--type-button-2-letter-spacing);
   display: inline-block;
   box-sizing: border-box;
@@ -307,7 +405,7 @@ button.secondary:hover {
 }
 
 main input {
-  font: var(--type-body-2-strong-font);
+  font-family: var(--body-font-family);
   letter-spacing: var(--type-body-2-strong-letter-spacing);
   width: 100%;
   max-width: 50rem;
