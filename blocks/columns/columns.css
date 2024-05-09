@@ -96,6 +96,12 @@
   gap: 1rem;
 }
 
+.product-desc .button-container {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+}
+
 .product-desc .button-container .button {
   width: auto;
   height: auto;
