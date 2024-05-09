@@ -11,23 +11,22 @@
  */
 
 :root {
-
-    /* Alaska font */
-    --font-family-extralight: 'Alaska-ExtraLight', sans-serif;
-    --font-family-extralightitalic: 'Alaska-ExtraLightItalic', sans-serif;
-    --font-family-light: 'Alaska-Light', sans-serif;
-    --font-family-lightitalic: 'Alaska-LightItalic', sans-serif;
-    --font-family-regular: 'Alaska-Regular', sans-serif;
-    --font-family-regularitalic: 'Alaska-RegularItalic', sans-serif;
-    --font-family-semibold: 'Alaska-SemiBold', sans-serif;
-    --font-family-semibolditalic: 'Alaska-SemiBoldItalic', sans-serif;
-    --font-family-bold: 'Alaska-Bold', sans-serif;
-    --font-family-bolditalic: 'Alaska-BoldItalic', sans-serif;
-    --code-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
-      monospace;
-      --code-bold-font-family: 'Roboto Mono Bold', menlo, consolas, 'Liberation Mono',
-      monospace;
-
+  /* Alaska font */
+  --font-family-extralight: 'Alaska-ExtraLight', sans-serif;
+  --font-family-extralightitalic: 'Alaska-ExtraLightItalic', sans-serif;
+  --font-family-light: 'Alaska-Light', sans-serif;
+  --font-family-lightitalic: 'Alaska-LightItalic', sans-serif;
+  --font-family-regular: 'Alaska-Regular', sans-serif;
+  --font-family-regularitalic: 'Alaska-RegularItalic', sans-serif;
+  --font-family-semibold: 'Alaska-SemiBold', sans-serif;
+  --font-family-semibolditalic: 'Alaska-SemiBoldItalic', sans-serif;
+  --font-family-bold: 'Alaska-Bold', sans-serif;
+  --font-family-bolditalic: 'Alaska-BoldItalic', sans-serif;
+  --code-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
+    monospace;
+    --code-bold-font-family: 'Roboto Mono Bold', menlo, consolas, 'Liberation Mono',
+    monospace;
+  
   /* Font family definition  */
   --body-font-family: var(--font-family-light), arial, sans-serif;  /* Body */
   --body-font-family-italic:   var(--font-family-lightitalic), arial, sans-serif; /* Body italic */
@@ -42,30 +41,29 @@
   font-size: 17px;
   line-height: 27px;
 
+  /* Font family for Mobile  */
+  --body-font-size: 1rem; /* 18px */
+  --body-font-height: 1.6875rem /* 27px */
 
-   /* Font family for Mobile  */
-   --body-font-size: 1rem; /* 18px */
-   --body-font-height: 1.6875rem /* 27px */
- 
-   /* Font family for Desktop  */;
-   --body-font-size-l: 1.125rem; /* 18px */
-   --body-font-height-l: 1.875rem; /* 30px */
-   --body-font-size-m: 0.889rem; /* 16px */
- 
-   /* Small size */
-   --body-font-size-s: 0.875rem; /* 14px */
-   --body-font-size-xs: 0.667rem; /* 12px */ 
-   --body-font-height-s: 1; 
- 
-   /* Body font size */
-   --font-size: clamp(var(--body-font-size), 2.3vw, var(--body-font-size));
-   --line-height: clamp(
-     var(--body-font-height),
-     2.3vw,
-     var(--body-font-height-l)
-   );
+  /* Font family for Desktop  */;
+  --body-font-size-l: 1.125rem; /* 18px */
+  --body-font-height-l: 1.875rem; /* 30px */
+  --body-font-size-m: 0.889rem; /* 16px */
 
-     /* Spacing */
+  /* Small size */
+  --body-font-size-s: 0.875rem; /* 14px */
+  --body-font-size-xs: 0.667rem; /* 12px */ 
+  --body-font-height-s: 1; 
+
+  /* Body font size */
+  --font-size: clamp(var(--body-font-size), 2.3vw, var(--body-font-size));
+  --line-height: clamp(
+    var(--body-font-height),
+    2.3vw,
+    var(--body-font-height-l)
+  );
+
+  /* Spacing */
   --spacing-xxxs: 0.25rem; /* 4px */
   --spacing-xxs: 0.5rem; /* 8px */
   --spacing-xsm: 0.75rem; /* 12px */
@@ -81,32 +79,66 @@
   --spacing-5xl: 6.5rem; /* 104px */
   --spacing-6xl: 8.889rem; /* 160px */
 
-   /* Page */
-   --page-max-width: 1440px;
-   --page-max-content: 1200px;
- 
-   /* Color */
-   --color-white: #fff;
-   --color-black: #000;
-   --color-heart-red: #f91351;
-   --color-heart-red-dark: #E02746;
-   --color-light-blue: #00aded;
-   --color-dark-blue: #0067b3;
-   --color-nocturnal-blue: #212a35;
-   --color-space-gray: #eff1f4;
-   --color-surgical-white: #fff;
-   --color-pitch-black: #161616;
-   --color-wild-seal: #4d555d;
-   --color-rocky-road: #7a7f86;
-   --color-cloudy-sky: #e0e4ea;
-   --color-western-snow: #f7f9fc;
+  /* Page */
+  --page-max-width: 1440px;
+  --page-max-content: 1200px;
 
-     /* Background colors */
+  /* Color */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-heart-red: #f91351;
+  --color-heart-red-dark: #E02746;
+  --color-light-blue: #00aded;
+  --color-dark-blue: #0067b3;
+  --color-nocturnal-blue: #212a35;
+  --color-space-gray: #eff1f4;
+  --color-surgical-white: #fff;
+  --color-pitch-black: #161616;
+  --color-wild-seal: #4d555d;
+  --color-rocky-road: #7a7f86;
+  --color-cloudy-sky: #e0e4ea;
+  --color-western-snow: #f7f9fc;
+  
+  /* Background colors */
   --color-foreground: var(--color-white);
   --color-background: var(--color-nocturnal-blue);
 
   /* Links Color */
   --color-link: var(--color-heart-red);
+
+  /* Header & Footer */
+  --header-desktop-height: 11.125rem;
+  --header-mobile-height: 6.1875rem;
+  --footer-desktop-height: 18.375rem;
+
+  /* Mobile Headings */
+  --heading-font-size-xxxl: 60px;
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 27px;
+  --heading-font-size-l: 22px;
+  --heading-font-size-m: 18px;
+  --heading-font-size-s: 14px;
+  --heading-font-size-xs: 12px;
+
+  /* Line height */
+  --heading-line-height-xxl: 41px;
+  --heading-line-height-xl: 31px;
+  --heading-line-height-l: 25px;
+  --heading-line-height-m: 20px;
+  --heading-line-height-s: 15px;
+  --heading-line-height-xs: 12px;
+
+  /* Buttons & Links */
+  --hover-animation-delay: 0.3s;
+  --hover-animation-curve: ease;
+  --hover-animation-offset: 2px;
+
+  /* Animations and transition */
+  --hover-animation: 0.2s all ease-out;
+
+    /* nav height */
+  --nav-height: 60px;
+  
 
   /* Elsie base design */
   --color-brand-300: #6d6d6d;
@@ -256,34 +288,119 @@ header {
   height: var(--nav-height);
 }
 
-h1 {
-  font: var(--type-display-1-font);
-  letter-spacing: var(--type-display-1-letter-spacing);
-}
-
-h2 {
-  font: var(--type-display-2-font);
-  letter-spacing: var(--type-display-2-letter-spacingg);
-}
-
-h3 {
-  font: var(--type-display-3-font);
-  letter-spacing: var(--type-display-3-letter-spacing);
-}
-
-h4 {
-  font: var(--type-headline-1-font);
-  letter-spacing: var(--type-headline-1-letter-spacing);
-}
-
-h5 {
-  font: var(--type-headline-2-strong-font);
-  letter-spacing: var(--type-headline-2-strong-letter-spacing);
-}
-
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-  font: var(--type-headline-2-default-font);
-  letter-spacing: var(--type-headline-2-default-letter-spacing);
+  font-style: normal;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+  word-break: break-word;
+  hyphens: none;
+  color: var(--color-black);
+  & strong {
+    color: var(--color-heart-red);
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--font-family-semibold);
+  margin-bottom: var(--spacing-m);
+
+  @media (width >= 900px) {
+    margin-bottom: var(--spacing-l);
+  }
+
+  & em, 
+  & i{
+    font-family: var(--bold-font-family-italic);
+  }
+}
+
+/* Heading 2 XXL */
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height-xxl);
+  
+}
+
+/* Heading 2 XL */
+h2 {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height-xl);
+}
+
+/* Heading 3 L */
+h3 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-l);
+  font-family: var(--font-family-extralight);
+  margin-bottom: var(--spacing-s);
+  
+  @media (width >= 900px) {
+    margin-bottom: var(--spacing-m);
+  }
+
+  & em, 
+  & i {
+    font-family: var(--font-family-extralightitalic);
+  }
+}
+
+/* Heading 4 M */
+h4 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-m);
+  font-family: var(--font-family-regular);
+  margin-bottom: var(--spacing-xs);
+  
+  @media (width >= 900px) {
+    margin-bottom: var(--spacing-s);
+  }
+
+  & em, 
+  & i {
+    font-family: var(--font-family-regularitalic);
+  }
+}
+
+/* Heading 5 S */
+h5 {
+  font-size: var(--heading-font-size-s);
+  line-height: var(--heading-line-height-s);
+  font-family: var(--font-family-bold);
+  margin-bottom: var(--spacing-xxs);
+  
+  @media (width >= 900px) {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  & em, 
+  & i{
+    font-family: var(--bold-font-family-italic);
+  }
+}
+
+/* Heading 6 XS */
+h6 {
+  font-size: var(--heading-font-size-xs);
+  line-height: var(--heading-line-height-xs);
+  font-family: var(--font-family-regular);
+  margin-bottom: var(--spacing-xxs);
+  
+  @media (width >= 900px) {
+    margin-bottom: var(--spacing-xxs);
+  }
+
+  & em, 
+  & i{
+    font-family: var(--semibold-font-family-italic);
+  }
 }
 
 p,
@@ -359,8 +476,7 @@ a > u, button > u {
 /* buttons */
 a.button:any-link,
 button {
-  font-family: var(--body-font-family);
-  letter-spacing: var(--type-button-2-letter-spacing);
+  font-family: var(--semibold-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
@@ -369,7 +485,7 @@ button {
   text-align: center;
   cursor: pointer;
   color: var(--color-neutral-50);
-  background-color: var(--color-brand-500);
+  background-color: var(--color-heart-red);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -381,8 +497,9 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--color-brand-600);
+  background-color: var(--color-white);
   cursor: pointer;
+  color: var(--color-heart-red);
 }
 
 a.button.disabled,
