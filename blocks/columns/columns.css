@@ -34,6 +34,7 @@
 
 .product-container {
   display: flex;
+  gap: 3rem;
   flex-direction: column;
 }
 
@@ -41,10 +42,14 @@
   .product-container {
     flex-direction: row;
   }
+
+  .product-container > div {
+    flex-basis: 50%;
+  }
 }
 
 .product-container .product-media {
-  order: 2;
+  order: 1;
   display: flex;
   flex-direction: column;
 }
