@@ -136,38 +136,6 @@ main .hero-container {
   height: 100%;
 }
 
-.service-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  gap: var(--spacing-xs);
-  max-width: 80%;
-  width: 100%;
-}
-
-.service-item {
-  margin: 0;
-}
-
-.service-item a  {
-  color: var(--color-white);
-  background: var(--color-heart-red-dark);
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-s);
-  line-height: var(--heading-line-height-xs);
-  border-radius: 3px;
-  box-sizing: border-box;
-  padding: var(--spacing-xs);
-  display: inline-block;
-  min-width: 154px;
-  text-align: center;
-}
-
-.service-item-2 a {
-  background: var(--color-light-blue);
-}
-
 /* Hero home heading */
 
 .hero-home .hero-item {
