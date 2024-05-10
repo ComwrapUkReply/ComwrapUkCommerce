@@ -1,3 +1,6 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable property-no-vendor-prefix */
+
 /* Footer core block */
 footer {
   background-color: var(--color-background);

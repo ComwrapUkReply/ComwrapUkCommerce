@@ -255,7 +255,6 @@
   /* Additional tokens */
   --type-fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
   --background-color: var(--color-neutral-50);
-  --nav-height: 6.4rem;
 }
 
 @font-face {
@@ -302,6 +301,7 @@ h6 {
   word-break: break-word;
   hyphens: none;
   color: var(--color-black);
+
   & strong {
     color: var(--color-heart-red);
   }
