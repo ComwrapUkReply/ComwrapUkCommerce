@@ -1,3 +1,5 @@
+/* eslint no-use-before-define: 0 */
+
 import { cartApi } from "../../scripts/minicart/api.js";
 import { getMetadata } from "../../scripts/aem.js";
 import { loadFragment } from "../fragment/fragment.js";
