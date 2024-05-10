@@ -139,7 +139,7 @@ main .hero-container {
 /* Hero home heading */
 
 .hero-home .hero-item {
-  max-width: 1264px;
+  max-width: 1200px;
   margin-inline: auto;
   padding: var(--spacing-xxl) var(--spacing-m);
   width: 100%;
