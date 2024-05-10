@@ -1,5 +1,10 @@
-/* eslint no-use-before-define: 0 */
-
+/* eslint-disable function-paren-newline */
+/* eslint-disable comma-dangle */
+/* eslint-disable operator-linebreak */
+/* eslint-disable nonblock-statement-body-position */
+/* eslint-disable curly */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable quotes */
 import { cartApi } from "../../scripts/minicart/api.js";
 import { getMetadata } from "../../scripts/aem.js";
 import { loadFragment } from "../fragment/fragment.js";
