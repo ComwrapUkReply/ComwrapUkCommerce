@@ -18,6 +18,8 @@
 
 .cards .cards-card-image {
   line-height: 0;
+  position: relative;
+  min-height: 350px;
 }
 
 .cards .cards-card-image p {
@@ -30,6 +32,9 @@
 
 .cards > ul > li img {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
