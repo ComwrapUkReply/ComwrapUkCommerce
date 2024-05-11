@@ -30,7 +30,7 @@ const config = {
 
 window.adobeDataLayer.push(
   { storefrontInstanceContext: config },
-  { eventForwardingContext: { commerce: true, aep: false } }
+  { eventForwardingContext: { commerce: true, aep: false } },
 );
 
 // Load events SDK and collector

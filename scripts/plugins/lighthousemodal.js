@@ -25,6 +25,7 @@ function wrapper(category, results) {
       // Push the category and analysisUTCTimestamp to results array
       results.push({ category, data: json.lighthouseResult.categories });
     })
+    // eslint-disable-next-line no-console
     .catch((error) => console.error('Error fetching PageSpeed Insights:', error));
 }
 

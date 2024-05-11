@@ -68,6 +68,7 @@ function createDebugPanel() {
     }
   });
 }
+// eslint-disable-next-line import/prefer-default-export
 export function initializeDebugPanel(jsonLdStringInit, dcStringInit, coStringInit) {
   jsonLdString = jsonLdStringInit;
   dcString = dcStringInit;

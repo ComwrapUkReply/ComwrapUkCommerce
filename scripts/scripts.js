@@ -89,7 +89,7 @@ async function loadFonts() {
 // added for modal handling, see adobe docs
 // eslint-disable-next-line no-unused-vars
 function autolinkModals(element) {
-  element.addEventListener('click', async(e) => {
+  element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
 
     if (origin && origin.href && origin.href.includes('/modals/')) {
@@ -214,9 +214,9 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
-  if ((getMetadata('experiment') ||
-    Object.keys(getAllMetadata('campaign')).length ||
-    Object.keys(getAllMetadata('audience')).length)) {
+  if ((getMetadata('experiment')
+    || Object.keys(getAllMetadata('campaign')).length
+    || Object.keys(getAllMetadata('audience')).length)) {
     // eslint-disable-next-line import/no-relative-packages
     const { loadLazy: runLazy } = await import('./plugins/experimentation/src/index.js');
     await runLazy(document, { audiences: AUDIENCES }, pluginContext);

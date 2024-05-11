@@ -39,6 +39,7 @@ await import('../../config/config.js');
 
 function noAction() {
 }
+// eslint-disable-next-line import/prefer-default-export
 export async function initializeSiteConfig() {
 // Determine the environment and locality based on the URL
   const getEnvironment = () => {
