@@ -8,4 +8,5 @@ helix-importer-ui
 .DS_Store
 *.bak
 .idea
-package-lock.json
+scrap/*
+.vscode/*
