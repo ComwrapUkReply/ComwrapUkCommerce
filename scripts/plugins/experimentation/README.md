@@ -124,7 +124,7 @@ Typically, you'd know you don't have the plugin system if you don't see a refere
         || Object.keys(getAllMetadata('campaign')).length
         || Object.keys(getAllMetadata('audience')).length) {
         // eslint-disable-next-line import/no-relative-packages
-        const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
+        const { loadEager: runEager } = await import('./plugins/experimentation/src/index.js');
         await runEager(document, { audiences: AUDIENCES }, pluginContext);
       }
       …

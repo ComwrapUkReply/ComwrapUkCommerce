@@ -86,6 +86,19 @@ async function loadFonts() {
     // do nothing
   }
 }
+// added for modal handling, see adobe docs
+// eslint-disable-next-line no-unused-vars
+function autolinkModals(element) {
+  element.addEventListener('click', async(e) => {
+    const origin = e.target.closest('a');
+
+    if (origin && origin.href && origin.href.includes('/modals/')) {
+      e.preventDefault();
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openModal(origin.href);
+    }
+  });
+}
 
 /**
  * Builds all synthetic blocks in a container element.
@@ -119,12 +132,13 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
+  document.documentElement.lang = 'en';
   // Add below snippet early in the eager phase
   if (getMetadata('experiment')
     || Object.keys(getAllMetadata('campaign')).length
     || Object.keys(getAllMetadata('audience')).length) {
     // eslint-disable-next-line import/no-relative-packages
-    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
+    const { loadEager: runEager } = await import('./plugins/experimentation/src/index.js');
     await runEager(document, { audiences: AUDIENCES }, pluginContext);
   }
   document.documentElement.lang = 'en';
@@ -181,24 +195,32 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadBlocks(main);
-  // Add below snippet at the end of the lazy phase
+  autolinkModals(doc); // added for modal handling, see adobe docs
   if ((getMetadata('experiment')
     || Object.keys(getAllMetadata('campaign')).length
     || Object.keys(getAllMetadata('audience')).length)) {
     // eslint-disable-next-line import/no-relative-packages
-    const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
+    const { loadLazy: runLazy } = await import('./plugins/experimentation/src/index.js');
     await runLazy(document, { audiences: AUDIENCES }, pluginContext);
   }
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
-
-  loadHeader(doc.querySelector('header'));
-  loadFooter(doc.querySelector('footer'));
+  if (!window.hlx.suppressFrame) { // added for sidekick library - see block party
+    loadHeader(doc.querySelector('header'));
+    loadFooter(doc.querySelector('footer'));
+  }
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+  if ((getMetadata('experiment') ||
+    Object.keys(getAllMetadata('campaign')).length ||
+    Object.keys(getAllMetadata('audience')).length)) {
+    // eslint-disable-next-line import/no-relative-packages
+    const { loadLazy: runLazy } = await import('./plugins/experimentation/src/index.js');
+    await runLazy(document, { audiences: AUDIENCES }, pluginContext);
+  }
 
   await import('./acdl/adobe-client-data-layer.min.js');
   if (sessionStorage.getItem('acdl:debug')) {
@@ -280,6 +302,14 @@ export async function loadFragment(path) {
 }
 
 async function loadPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  // added for sidekick library - see block party
+  if (urlParams.get('suppressFrame') || window.location.pathname.includes('tools/sidekick')) {
+    window.hlx.suppressFrame = true;
+    document.body.querySelector('header').remove();
+    document.body.querySelector('footer').remove();
+  }
+
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();

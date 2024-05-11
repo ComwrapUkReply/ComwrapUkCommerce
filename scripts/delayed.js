@@ -6,13 +6,13 @@ import { getConfigValue } from './configs.js';
 sampleRUM('cwv');
 
 // add more delayed functionality here
+// If you need any delayed stuff client-side add it to the callbackAfter3SecondsChain
+for (const callback of window.cmsplus.callbackAfter3SecondsChain) {
+  await callback();
+}
 
 // Load Commerce events SDK and collector
 const config = {
-  environmentId: await getConfigValue('commerce-environment-id'),
-  environment: await getConfigValue('commerce-environment') === 'Production' ? 'prod' : 'non-prod',
-  storeUrl: await getConfigValue('commerce-store-url'),
-  websiteId: parseInt(await getConfigValue('commerce-website-id'), 10),
   websiteCode: await getConfigValue('commerce-website-code'),
   storeId: parseInt(await getConfigValue('commerce-store-id'), 10),
   storeCode: await getConfigValue('commerce-store-code'),
