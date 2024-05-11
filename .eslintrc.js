@@ -2,11 +2,20 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
     'eslint:recommended',
     'airbnb-base',
+    'plugin:import/errors',
+    'plugin:import/warnings',
   ],
+  plugins: [
+    'import',
+  ],
+  globals: {
+    Intl: 'readonly',
+  },
   overrides: [
     {
       env: {
