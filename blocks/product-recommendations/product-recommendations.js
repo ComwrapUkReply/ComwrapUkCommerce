@@ -153,6 +153,7 @@ async function loadRecommendation(block, context) {
     context.userViewHistory = JSON.parse(viewHistory);
   } catch (e) {
     window.localStorage.removeItem('productViewHistory');
+    // eslint-disable-next-line no-console
     console.error('Error parsing product view history', e);
   }
 
@@ -162,6 +163,7 @@ async function loadRecommendation(block, context) {
     context.userPurchaseHistory = JSON.parse(purchaseHistory);
   } catch (e) {
     window.localStorage.removeItem('purchaseHistory');
+    // eslint-disable-next-line no-console
     console.error('Error parsing purchase history', e);
   }
 
