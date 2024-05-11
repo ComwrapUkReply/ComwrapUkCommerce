@@ -6,13 +6,15 @@ import { getConfigValue } from './configs.js';
 sampleRUM('cwv');
 
 // add more delayed functionality here
+// If you need any delayed stuff client-side add it to the callbackAfter3SecondsChain
+// eslint-disable-next-line no-restricted-syntax
+for (const callback of window.cmsplus.callbackAfter3SecondsChain) {
+  // eslint-disable-next-line no-await-in-loop
+  await callback();
+}
 
 // Load Commerce events SDK and collector
 const config = {
-  environmentId: await getConfigValue('commerce-environment-id'),
-  environment: await getConfigValue('commerce-environment') === 'Production' ? 'prod' : 'non-prod',
-  storeUrl: await getConfigValue('commerce-store-url'),
-  websiteId: parseInt(await getConfigValue('commerce-website-id'), 10),
   websiteCode: await getConfigValue('commerce-website-code'),
   storeId: parseInt(await getConfigValue('commerce-store-id'), 10),
   storeCode: await getConfigValue('commerce-store-code'),
@@ -28,7 +30,7 @@ const config = {
 
 window.adobeDataLayer.push(
   { storefrontInstanceContext: config },
-  { eventForwardingContext: { commerce: true, aep: false } },
+  { eventForwardingContext: { commerce: true, aep: false } }
 );
 
 // Load events SDK and collector

@@ -7,3 +7,9 @@ package-lock.json
 test/*
 postinstall.js
 tools/picker/src/*
+logs/*
+node_modules/*
+
+helix-importer-ui
+.DS_Store
+*.bak
