@@ -19,20 +19,20 @@
 import {
   tidyDOM,
   possibleMobileFix,
-  swiftChangesToDOM
+  swiftChangesToDOM,
 } from './reModelDom.js';
 
 import {
-  constructGlobal
+  constructGlobal,
 } from './variables.js';
 
 import {
-  initializeClientConfig
+  initializeClientConfig,
 } from './clientConfig.js';
 
 import {
   handleMetadataJsonLd,
-  createJSON
+  createJSON,
 } from './jsonHandler.js';
 
 await import('../../config/config.js');

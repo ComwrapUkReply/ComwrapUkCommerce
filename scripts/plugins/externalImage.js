@@ -1,6 +1,6 @@
 // External image handling, part of block-party; but modified by tom to be a plugin for Helix++
 import {
-  createOptimizedPicture as libCreateOptimizedPicture
+  createOptimizedPicture as libCreateOptimizedPicture,
 } from '../aem.js';
 
 /**

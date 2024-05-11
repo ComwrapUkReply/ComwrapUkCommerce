@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable class-methods-use-this */
 import {
   Component, Fragment, h, render,
@@ -113,6 +114,7 @@ class ProductDetailPage extends Component {
   };
 
   onAddToWishlist = async () => {
+    // eslint-disable-next-line no-console
     console.debug('onAddToWishlist', this.state.product.sku);
   };
 

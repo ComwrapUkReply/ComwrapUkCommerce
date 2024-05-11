@@ -27,7 +27,7 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
-    'no-console': 'off',
+    'no-console': 'error',
     'no-param-reassign': 'off',
     'operator-linebreak': 'off',
     'space-before-function-paren': 'off',
@@ -35,7 +35,7 @@ module.exports = {
     'comma-dangle': ['error', {
       arrays: 'always-multiline',
       objects: 'always-multiline',
-      imports: 'never',
+      imports: 'always-multiline',
       exports: 'always-multiline',
       functions: 'never',
     }],

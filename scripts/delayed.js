@@ -7,7 +7,9 @@ sampleRUM('cwv');
 
 // add more delayed functionality here
 // If you need any delayed stuff client-side add it to the callbackAfter3SecondsChain
+// eslint-disable-next-line no-restricted-syntax
 for (const callback of window.cmsplus.callbackAfter3SecondsChain) {
+  // eslint-disable-next-line no-await-in-loop
   await callback();
 }
 
@@ -28,7 +30,7 @@ const config = {
 
 window.adobeDataLayer.push(
   { storefrontInstanceContext: config },
-  { eventForwardingContext: { commerce: true, aep: false } },
+  { eventForwardingContext: { commerce: true, aep: false } }
 );
 
 // Load events SDK and collector
