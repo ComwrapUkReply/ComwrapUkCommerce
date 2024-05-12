@@ -17,6 +17,9 @@ import {
   toCamelCase,
 } from './aem.js';
 
+await import('./plugins/siteConfig.js');
+await import('./plugins/externalImage.js');
+
 const LCP_BLOCKS = [
   'product-list-page',
   'product-list-page-custom',
