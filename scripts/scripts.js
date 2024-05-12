@@ -19,8 +19,6 @@ import {
 
 import { initializeSiteConfig } from './plugins/siteConfig.js';
 
-initializeSiteConfig();
-
 const LCP_BLOCKS = [
   'product-list-page',
   'product-list-page-custom',

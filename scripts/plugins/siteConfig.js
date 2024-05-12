@@ -37,8 +37,6 @@ import {
 
 import { initializeExternalImage } from './externalImage.js';
 
-initializeExternalImage();
-
 await import('../../config/config.js');
 
 function noAction() {
