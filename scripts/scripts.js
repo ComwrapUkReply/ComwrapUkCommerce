@@ -17,7 +17,7 @@ import {
   toCamelCase,
 } from './aem.js';
 
-import { initializeSiteConfig } from './plugins/siteConfig.js';
+import { } from './plugins/siteConfig.js';
 
 const LCP_BLOCKS = [
   'product-list-page',

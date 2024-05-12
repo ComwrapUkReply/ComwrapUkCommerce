@@ -165,4 +165,3 @@ export function initializeExternalImage() {
   decorateExternalImages(document.querySelector('main'));
 }
 initializeExternalImage();
-
