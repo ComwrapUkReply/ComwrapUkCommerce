@@ -7,8 +7,8 @@ sampleRUM('cwv');
 
 // add more delayed functionality here
 // If you need any delayed stuff client-side add it to the callbackAfter3SecondsChain
-// eslint-disable-next-line no-restricted-syntax
 if (window.cmsplus?.callbackAfter3SecondsChain) {
+// eslint-disable-next-line no-restricted-syntax
   for (const callback of window.cmsplus.callbackAfter3SecondsChain) {
     // eslint-disable-next-line no-await-in-loop
     await callback();
