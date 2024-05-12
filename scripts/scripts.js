@@ -17,6 +17,7 @@ import {
   toCamelCase,
 } from './aem.js';
 
+/* eslint-disable no-restricted-syntax */
 await import('./plugins/siteConfig.js');
 await import('./plugins/externalImage.js');
 
