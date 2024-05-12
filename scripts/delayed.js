@@ -8,11 +8,12 @@ sampleRUM('cwv');
 // add more delayed functionality here
 // If you need any delayed stuff client-side add it to the callbackAfter3SecondsChain
 // eslint-disable-next-line no-restricted-syntax
-for (const callback of window.cmsplus.callbackAfter3SecondsChain) {
-  // eslint-disable-next-line no-await-in-loop
-  await callback();
+if (window.cmsplus.callbackAfter3SecondsChain) {
+  for (const callback of window.cmsplus.callbackAfter3SecondsChain) {
+    // eslint-disable-next-line no-await-in-loop
+    await callback();
+  }
 }
-
 // Load Commerce events SDK and collector
 const config = {
   websiteCode: await getConfigValue('commerce-website-code'),
