@@ -17,9 +17,9 @@ import {
   toCamelCase,
 } from './aem.js';
 
-/* eslint-disable no-restricted-syntax */
-await import('./plugins/siteConfig.js');
-await import('./plugins/externalImage.js');
+import { initializeSiteConfig } from './plugins/siteConfig.js';
+
+initializeSiteConfig();
 
 const LCP_BLOCKS = [
   'product-list-page',
