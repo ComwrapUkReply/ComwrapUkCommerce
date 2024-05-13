@@ -94,10 +94,28 @@ export function swiftChangesToDOM() {
   }
 }
 
+const loadScript = (url, type) => {
+  const main = document.querySelector('main');
+  const script = document.createElement('script');
+  script.src = url;
+  if (type) {
+    script.setAttribute('type', type);
+  }
+  main.append(script);
+};
+
+function inject() {
+  if (window.siteConfig?.['$meta:inject$']) {
+    const jsName = window.siteConfig['$meta:inject$'];
+    loadScript(jsName);
+  }
+}
+
 // tidyDOM is the slow fixes to the Dom that do not change styes or view
 export async function tidyDOM() {
   removeCommentBlocks();
   removeMeta();
+  inject();
   if (document.querySelector('coming-soon')) {
     DocumentFragment.body.classList.add('hide');
   }
