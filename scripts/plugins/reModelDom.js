@@ -35,6 +35,12 @@ export function removeMeta() {
     'og:site_name',
     'keywords',
     'experiment',
+    'conversion-name',
+    'instant-experiment',
+    'theme',
+    'template',
+    'footer',
+
   ];
   const elements = document.querySelectorAll('meta[name]');
 
