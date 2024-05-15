@@ -11,6 +11,17 @@
     <base href="/" />
 
     <style>
+      :root {
+        --sk-block-table-background-color: #03a;
+        --sk-block-table-foreground-color: #fff;
+
+        --sk-section-metadata-table-background-color: #f30;
+        --sk-section-metadata-table-foreground-color: #000;
+
+        --sk-metadata-table-background-color: #000;
+        --sk-metadata-table-foreground-color: #fff;
+      }
+
       html,
       body {
         margin: 0;
@@ -19,8 +30,10 @@
         background-color: #ededed;
         height: 100%;
       }
-      
-      helix-sidekick { display: none }
+
+      helix-sidekick {
+        display: none;
+      }
     </style>
     <title>Sidekick Library</title>
   </head>
@@ -28,15 +41,15 @@
   <body>
     <script
       type="module"
-      src="https://www.aem.live/tools/sidekick/library/index.js"
+      src="https://www.hlx.live/tools/sidekick/library/index.js"
     ></script>
     <script>
-      const library = document.createElement('sidekick-library')
+      const library = document.createElement('sidekick-library');
       library.config = {
         base: '/tools/sidekick/library.json',
-      }
+      };
 
-      document.body.prepend(library)
+      document.body.prepend(library);
     </script>
   </body>
 </html>
