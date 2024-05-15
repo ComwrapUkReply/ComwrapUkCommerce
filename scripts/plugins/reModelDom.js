@@ -34,6 +34,7 @@ export function removeMeta() {
     'og:url',
     'og:site_name',
     'keywords',
+    'experiment',
   ];
   const elements = document.querySelectorAll('meta[name]');
 
