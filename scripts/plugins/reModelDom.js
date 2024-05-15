@@ -19,7 +19,7 @@ export function addByLine() {
   }
 }
 export function removeMeta() {
-  const metadataNames = [
+  const keepMetadataNames = [
     'description',
     'twitter:card',
     'twitter:title',
@@ -46,7 +46,7 @@ export function removeMeta() {
 
   elements.forEach((element) => {
     const name = element.getAttribute('name');
-    if (!metadataNames.includes(name)) {
+    if (!keepMetadataNames.includes(name)) {
       element.remove();
     }
   });
