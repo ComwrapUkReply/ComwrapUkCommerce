@@ -63,18 +63,6 @@ export function createJSON() {
   }
   window.siteConfig['$meta:category'] ??= 'none';
 
-  // decode the language
-  const defaultLang = 'en';
-  const metaProperties = [
-    '$meta:lang$',
-    '$meta:language$',
-    '$meta:dc-language$',
-  ];
-
-  const lang = metaProperties.reduce((acc, prop) => acc || window.siteConfig[prop], '') || window.navigator.language || defaultLang;
-
-  window.siteConfig['$system:language$'] = lang;
-
   if (window.siteConfig['$meta:command$'] !== undefined) {
     const commands = (window.siteConfig['$meta:command$'].split(';'));
     // eslint-disable-next-line no-restricted-syntax
@@ -89,6 +77,14 @@ export function createJSON() {
 
   if (window.siteConfig?.['$meta:category$'] === 'home') {
     window.siteConfig['$meta:category$'] = 'none';
+  }
+
+  // decode the language
+  const lang = window.siteConfig['$system:language$'] || window.siteConfig?.['$meta:lang$'] || window.siteConfig?.['$meta:language$'] || window.siteConfig?.['$meta:dc-language$'] || window.navigator.language || 'en';
+  window.siteConfig['$system:language$'] = lang;
+  document.querySelector('html').setAttribute('lang', lang);
+  if (lang === 'ar') {
+    document.querySelector('html').setAttribute('dir', 'rtl');
   }
   co['co:language'] = lang;
   co['co:author'] = window.siteConfig['$meta:author$'];
