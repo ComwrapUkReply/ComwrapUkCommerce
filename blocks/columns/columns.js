@@ -44,6 +44,7 @@ export default function decorate(block) {
         const lastDiv = divDesc[divDesc.length - 1];
         lastDiv.classList.add('product-desc');
         const productDesc = row.querySelector('.product-desc');
+        // eslint-disable-next-line no-console
         console.log(productDesc);
         block.appendChild(productDesc);
         // console.log(lastDiv)

@@ -33,6 +33,7 @@ class Store {
       const parsed = JSON.parse(cartIdField);
       return parsed.value.replaceAll('"', '');
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error('Could not parse cartId', err);
       return null;
     }
@@ -91,6 +92,7 @@ class Store {
       const parsed = JSON.parse(window.localStorage.getItem(`${this.key}_${this.cartId}`)) || Store.DEFAULT_CART;
       return parsed;
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error('Failed to parse cart from localStore. Resetting it.');
       window.localStorage.removeItem(`${this.key}_${this.cartId}`);
     }
@@ -115,6 +117,7 @@ export const cartApi = {
     const { addToCart, createCart } = await import('./cart.js');
     const { showCart } = await import('./Minicart.js');
     if (!store.getCartId()) {
+      // eslint-disable-next-line no-console
       console.debug('Cannot add item to cart, need to create a new cart first.');
       await createCart();
     }
