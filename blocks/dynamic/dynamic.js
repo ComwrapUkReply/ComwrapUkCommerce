@@ -23,7 +23,7 @@ export default async function decorate(block) {
   }
   const content = await ffetch('/query-index.json').all();
 
-  let targetNames = ['products,blog']; // Initialize targetNames with 'blog' as the default
+  let targetNames = ['products']; // Initialize targetNames with 'blog' as the default
 
   if (!window.location.pathname.endsWith('/')) {
   // Extract path segments excluding the domain
