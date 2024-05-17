@@ -251,6 +251,8 @@ export async function getProduct(sku) {
 }
 
 // Store product view history in session storage
+
+/*
 (async () => {
   const storeViewCode = await getConfigValue('commerce-store-view-code');
   window.adobeDataLayer.push((dl) => {
@@ -274,7 +276,7 @@ export async function getProduct(sku) {
     });
   });
 })();
-
+*/
 export function setJsonLd(data, name) {
   const existingScript = document.head.querySelector(`script[data-name="${name}"]`);
   if (existingScript) {

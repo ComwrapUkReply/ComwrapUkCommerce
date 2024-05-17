@@ -10,9 +10,6 @@
         "Item":"$system:allowtracking$",
         "Value": "y"
       },{
-        "Item": "$system:trackingscript$",
-        "Value": "https://assets.adobedtm.com/d4e187856f02/84a8f19b48f1/launch-445ea36a9b64-development.min.js"
-      }, {
         "Item": "$system:abtastyscript$",
         "Value": "https://try.abtasty.com/54d41c1c745275ad6d723c2122a0693d.js"
       },{
