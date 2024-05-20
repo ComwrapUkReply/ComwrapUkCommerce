@@ -23,7 +23,10 @@ export default async function enableTracking() {
     };
     await loadScript('https://consent.cookiebot.com/uc.js', attrs);
   }
-  loadScript(`${window.siteConfig['$system:abtastyscript$']}`, {});
+  if (window.siteConfig?.['$system:abtastyscript$']) {
+    loadScript(`${window.siteConfig['$system:abtastyscript$']}`, {});
+  }
+
   await loadScript(`${window.siteConfig['$system:trackingscript$']}`, {});  
   window.adobeDataLayer = window.adobeDataLayer || [];
   try {
