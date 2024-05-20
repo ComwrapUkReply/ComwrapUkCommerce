@@ -1,5 +1,9 @@
 version: 1
 indices:
+  all:
+    include:
+        - '/**'
+        target: /query-index.json
   enrichment:
     target: /enrichment/enrichment.json
     include:
