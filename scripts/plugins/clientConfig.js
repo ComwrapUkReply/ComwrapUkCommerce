@@ -12,7 +12,6 @@ function enableDanteChat() {
   // eslint-disable-next-line no-undef
   loadScript('https://chat.dante-ai.com/dante-embed.js');
 }
-
 export default async function enableTracking() {
   if (window.siteConfig?.['$system:cookiebotid$']) {
   // eslint-disable-next-line no-console
@@ -26,8 +25,7 @@ export default async function enableTracking() {
   if (window.siteConfig?.['$system:abtastyscript$']) {
     loadScript(`${window.siteConfig['$system:abtastyscript$']}`, {});
   }
-
-  await loadScript(`${window.siteConfig['$system:trackingscript$']}`, {});  
+  await loadScript(`${window.siteConfig['$system:trackingscript$']}`, {});
   window.adobeDataLayer = window.adobeDataLayer || [];
   try {
     if (window.cmsplus?.track) {
