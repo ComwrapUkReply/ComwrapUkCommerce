@@ -500,6 +500,7 @@ button:focus {
   background-color: var(--color-white);
   cursor: pointer;
   color: var(--color-heart-red);
+  border: 2px solid var(--color-heart-red);
 }
 
 a.button.disabled,
