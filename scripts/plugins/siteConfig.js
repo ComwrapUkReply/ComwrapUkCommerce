@@ -32,7 +32,7 @@ import {
 
 import {
   handleMetadataJsonLd,
-  createJSON
+  createJSON,
 } from './jsonHandler.js';
 
 import { } from './externalImage.js';
