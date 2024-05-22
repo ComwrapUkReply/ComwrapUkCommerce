@@ -69,10 +69,11 @@ export default async function decorate(block) {
         ),
       ),
       div({ class: 'cards-card-body' },
-        span({ class: 'card-tag' }, card.service),
+        // span({ class: 'card-tag' }, card.service),
         span({ class: 'card-tag alt' }, card.resource),
         h3((card.headline)),
-        p(card.description),
+        // p(card.description),
+        p(card.price),
       ),
     )),
   );
