@@ -19,15 +19,15 @@
 import {
   tidyDOM,
   possibleMobileFix,
-  swiftChangesToDOM
+  swiftChangesToDOM,
 } from './reModelDom.js';
 
 import {
-  constructGlobal
+  constructGlobal,
 } from './variables.js';
 
 import {
-  initializeClientConfig
+  initializeClientConfig,
 } from './clientConfig.js';
 
 import {
