@@ -40,6 +40,10 @@ indices:
         select: head > meta[name="author"]
         value: |
           attribute(el, 'content')
+      resource:
+        select: head > meta[name="resource"]
+        value: |
+          attribute(el, 'content')
   enrichment:
     target: /enrichment/enrichment.json
     include:
