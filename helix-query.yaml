@@ -49,7 +49,7 @@ indices:
         value: |
           attribute(el, 'content')
       headline:
-        select: head > meta[name="price"]
+        select: head > meta[name="headline"]
         value: |
           attribute(el, 'content')
   enrichment:
