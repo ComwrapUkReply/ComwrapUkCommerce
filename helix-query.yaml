@@ -44,6 +44,14 @@ indices:
         select: head > meta[name="resource"]
         value: |
           attribute(el, 'content')
+      price:
+        select: head > meta[name="price"]
+        value: |
+          attribute(el, 'content')
+      headline:
+        select: head > meta[name="price"]
+        value: |
+          attribute(el, 'content')
   enrichment:
     target: /enrichment/enrichment.json
     include:
